@@ -1,13 +1,12 @@
 import React from "react";
 
-const Nav = () => (
-  <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a className="navbar-brand" href="/">
-      <i class="fal fa-books fa-3x"></i>
-    </a>
-    
-    <h1>NYT Google Book Club</h1>
-  </nav>
-);
+const Nav = () => {
+  return (
+    <header className="App-header">
+      <i class="fal fa-book-reader fa-2x" />
+      <h2>NYT Google Book Search</h2>
+    </header>
+    )
+  }
 
 export default Nav;
