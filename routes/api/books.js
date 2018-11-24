@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const router = require("../../../../../../Library/Caches/typescript/2.9/node_modules/@types/express").Router();
 const booksController = require("../../controllers/bookController");
 
 // Matches with "/api/books"
