@@ -11,7 +11,7 @@ const BookList = props => {
           image={book.volumeInfo.imageLinks.thumbnail}
           title={book.volumeInfo.title}
           author={book.volumeInfo.authors}
-          description={book.volumeInfo.description}
+          description={book.searchInfo.textSnippet}
           link={book.volumeInfo.infoLink}
         />
       })}

@@ -1,8 +1,8 @@
-import React, { Component} from 'react'
+import React, { Component } from "react";
+import API from "../../utils/API";
 import SearchArea from "../SearchArea";
 import request from "superagent";
-import BookList from '../BookList'
-
+import BookList from "../BookList";
 
 
 class Books extends Component {
@@ -14,20 +14,30 @@ class Books extends Component {
     };
   }
 
-
   handleSearch = e => {
     console.log(e.target.value);
     this.setState({ searchField: e.target.value });
   };
-  searchBook = (e) => {
+  searchBook = e => {
     e.preventDefault();
     request
       .get("https://www.googleapis.com/books/v1/volumes")
       .query({ q: this.state.searchField })
-      .then((data) => {
-        console.log(data)
-        this.setState({ books: [...data.body.items]});
-      })
+      .then(data => {
+        console.log(data);
+        this.setState({ books: [...data.body.items] });
+      });
+  };
+  handleOnClick = event => {
+    event.preventDefault();
+    API.saveBook({
+      title: this.state.title,
+      authors: this.state.authors,
+      description: this.state.description,
+      image: this.state.image,
+      link: this.state.link
+    })
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -37,7 +47,9 @@ class Books extends Component {
           searchBook={this.searchBook}
           handleSearch={this.handleSearch}
         />
-        <BookList books={this.state.books}/>
+        <div>
+          <BookList books={this.state.books} />
+        </div>
       </div>
     );
   }

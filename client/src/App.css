@@ -1,15 +1,25 @@
-.App {
+/* .App {
   text-align: center;
 }
 
 i {
-color: #61dafb;
+  margin-top:5px;
+
 }
+.fa-book-reader:before{
+  float: left;
+  color: #61dafb;
+} */
 img {
   float: left;
-  margin-left: 1%;
+  margin: 2% 1% 0% 2%;
+
   border-image: 1px;
 }
+p {
+  margin: 0% 2% 1% 2%;
+}
+
 .center {
   width: 100%;
   text-align:center;
@@ -18,29 +28,35 @@ img {
 #search {
  margin-top: 1em;
 }
+.right {
+  float: right;
+}
 
 .App-header {
-  background-color: #282c34;
+  background: rgba(0, 0, 0, 0.733);
   min-height: 10vh;
   display: flex;
-  flex-direction: column;
+
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
   color: #61dafb;
+}
+.header-title {
+  font: #fff;
 }
 .card-container {
   background: #fff;
   border-radius: 2px;
-  height: 100%;
+  display: inline-block;
+  height: 300px;
   margin: auto;
   margin-top: 10px;
   position: relative;
-  width: 900px;
+  width: 400px;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   overflow: hidden;
   text-align:center;
